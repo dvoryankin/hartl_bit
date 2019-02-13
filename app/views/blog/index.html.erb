@@ -1,0 +1,16 @@
+<h1>it is a index action of a blog controller</h1>
+
+<h1>
+    <%= "this is a #{@page}" %>
+</h1>
+
+<%= form_tag blog_path do %>
+  <div>
+    <%= text_field_tag :title %>
+  </div>
+
+  <div>
+    <%= text_area_tag :body %>
+  </div>
+  <%= submit_tag "Create Post" %>
+<% end %>

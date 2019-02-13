@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'application#hello'
+  root 'welcome#index'
+  # root 'application#hello'
+  get 'pages/:slug', controller: 'pages', action: 'show'
+
+  get 'news', controller: 'pages', action: 'news'
+
+
+  get '/blog', controller: 'blog', action: 'index'
+
+  get '/blog/:id', controller: 'blog', action: 'show'
+
+  post '/blog', to: 'blog#create'
 
 end
