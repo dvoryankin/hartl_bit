@@ -17,10 +17,10 @@ end
 
 #inside Rails
 
-kontroller = BlogController.new
-kontroller.send(:show) # call the show method
-kontroller.id
-kontroller.test
-ERB.render("show.html.erb", kontroller.instance_variables)
+# kontroller = BlogController.new
+# kontroller.send(:show) # call the show method
+# kontroller.id
+# kontroller.test
+# ERB.render("show.html.erb", kontroller.instance_variables)
 
 
