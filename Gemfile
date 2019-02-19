@@ -59,6 +59,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'sqlite3', '~> 1.3.6'
 
   gem 'minitest-reporters', '1.0.5'
   gem 'mini_backtrace',     '0.1.3'
