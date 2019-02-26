@@ -33,3 +33,6 @@
 .idea
 .git
 .env
+
+# Ignore spring files
+/spring/*.pid
