@@ -2,8 +2,15 @@ require 'spec_helper'
 
 describe "Static pages" do
 
+  describe "Home " do
+    it "should have the content 'Welcome'" do
+      visit '/'
+      expect(page).to have_selector(:css, 'h1', :text => 'Welcome')
+    end
+  end
+
   describe "Home page" do
-    it "should have the content 'root'" do
+    it "should have the content 'Welcome'" do
       visit '/'
       expect(page).to have_content('Welcome')
     end
@@ -11,7 +18,7 @@ describe "Static pages" do
 
   describe "static_pages" do
     it "should have the content 'Help'" do
-      visit '/help'
+      visit 'help'
       expect(page).to have_content('Help')
     end
 
@@ -21,7 +28,7 @@ describe "Static pages" do
     end
 
     it "should have the content 'Contact'" do
-      visit '/contact'
+      visit 'contact'
       expect(page).to have_content('Contact')
     end
   end
