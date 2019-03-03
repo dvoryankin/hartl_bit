@@ -1,20 +1,18 @@
 require 'spec_helper'
 
 describe "Static pages" do
+  before { visit root_path }
 
   describe "Home " do
     it "should have the h1 'Welcome'" do
-      visit '/'
       expect(page).to have_selector(:css, 'h1', :text => 'Welcome')
     end
 
     it "should have the base title" do
-      visit '/'
       expect(page).to have_title('Ruby on Rails Application')
     end
 
     it "should not have a custom page title" do
-      visit '/'
       expect(page).to_not have_selector(:css,'title', :text => 'Home')
     end
   end
