@@ -7,7 +7,6 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     @base_title = "Ruby on Rails Application"
   end
 
-
   test "should get home" do
     get root_path
     # get :home

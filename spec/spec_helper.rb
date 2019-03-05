@@ -15,6 +15,8 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'rubygems'
+require 'simplecov'
+SimpleCov.start
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
