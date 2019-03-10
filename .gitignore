@@ -37,3 +37,4 @@
 # Ignore spring files
 /spring/*.pid
 coverage
+.bundle
