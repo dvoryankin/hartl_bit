@@ -5,7 +5,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # binding.pry
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      p 'success'
+    else
+      render 'new'
+    end
   end
 
   def index
@@ -13,7 +21,9 @@ class UsersController < ApplicationController
   end
 
   private
-  def user_params
-    params.require(:user).permit(:name, :email)
-  end
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
+    end
 end
