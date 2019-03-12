@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   get 'signup' => 'users#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'session#create'
+  delete 'logout' => 'session#destroy'
+  resources :users
+
   root to: 'static_pages#home'
 
   # get 'static_pages/help'
@@ -10,8 +16,6 @@ Rails.application.routes.draw do
 
   # get 'static_pages/contact'
   get 'contact' => 'static_pages#contact'
-
-  resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # root 'welcome#index'
