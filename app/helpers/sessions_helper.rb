@@ -4,8 +4,9 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
-  def rememer(user)
-    cookies.permanent.signed[user_id] = user.id
+  def remember(user)
+    user.remember
+    cookies.permanent.signed[:user_id] = user.id
     cookies.permanent[:remember_token] = user.remember_token
   end
 
@@ -25,6 +26,13 @@ module SessionsHelper
   # Возвращает true, если пользователь зарегистрирован, иначе возвращает false.
   def logged_in?
     !current_user.nil?
+  end
+
+  # Закрывает постоянный сеанс.
+  def forget(user)
+    user.forget
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
   end
 
   # Logs out the current user.
