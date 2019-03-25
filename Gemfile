@@ -7,6 +7,10 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.1'
 
 gem 'bcrypt', '~> 3.1.12'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
