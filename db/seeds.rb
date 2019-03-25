@@ -4,7 +4,7 @@ User.create!(name:  "Example User",
              password_confirmation: "foobar")
 
 User.create!(name:  'iam',
-             email: 'a@a.com',
+             email: 'aa@aa.com',
              password: 'asdfasdf',
              password_confirmation: 'asdfasdf',
              admin: true)
