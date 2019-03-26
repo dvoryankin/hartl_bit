@@ -42,6 +42,17 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  # Активирует учетную запись.
+  def activate
+    update_attribute(:activated,    true)
+    update_attribute(:activated_at, Time.zone.now)
+  end
+
+  # Посылает письмо со ссылкой на страницу активации.
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
   private
 
     # Преобразует адрес электронной почты в нижний регистр.
