@@ -71,6 +71,10 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
+  def feed
+    Micropost.where('user_id = ?', id)
+  end
+
   private
 
     # Преобразует адрес электронной почты в нижний регистр.
